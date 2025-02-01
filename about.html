@@ -10,7 +10,7 @@
 <body>
 
 
-    <!--Navigation bar for about-->>
+    <!--Navigation bar for about-->
     <nav class="navbar">
 
         <div class="hamburger" onclick="toggleMenu()">☰</div>
@@ -24,9 +24,20 @@
     </nav>
     
 
+    <script>
 
+
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('open');  // Toggle the "open" class on the navbar
+        }
+        
+        </script>
 
     
+
+
+
     <section class="about-me">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
@@ -41,3 +52,72 @@
 </body>
 </html>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Footer contact info-->
+
+
+
+
+
+
+
+
+
+<footer class="contact-footer">
+    <div class="contact-content">
+        <h2 class="contact-title">Get in Touch</h2>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:your.name@example.com">your.name@example.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+441234567890">+44 1234 567890</a>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">
+                <i class="fab fa-linkedin social-icon"></i>
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener">
+                <i class="fab fa-github social-icon"></i>
+            </a>
+            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener">
+                <i class="fab fa-twitter social-icon"></i>
+            </a>
+        </div>
+    </div>
+</footer>

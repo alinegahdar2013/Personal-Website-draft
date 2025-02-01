@@ -21,6 +21,7 @@ html {
     --text: #2d3436;         
     --background: #ffffff;   
     --light-gray: #f8f9fa;
+    --Black : #000000;
     
     
 }
@@ -34,7 +35,7 @@ body {
 }
 
 
-.Name {
+.Name { 
     min-height: 100vh;             
     display: flex;
     flex-direction: column;
@@ -45,6 +46,12 @@ body {
     background: linear-gradient(20deg, var(--white) 40%, #1a237e 100%);
 }
 
+@media (max-width: 768px) { 
+    .Name {
+        min-height: 80vh; /* Reduce height to move it up */
+        padding-top: 1rem; /* Adjust top padding */
+    }
+}
 
 
 .prof-img {
@@ -106,7 +113,7 @@ h1 {
 /*Time line section*/
 
 .about {
-    padding: 8rem 2rem;
+    padding: 6rem 2rem;
     background: var(--light-gray);
 }
 
@@ -114,7 +121,7 @@ h1 {
     font-family: 'Merriweather', serif;
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
     position: relative;
     font-weight: 700;
 }
@@ -188,24 +195,28 @@ p {
 
 
 
+
+
 @media (max-width: 768px) {
     .timeline-item {
         flex-direction: column;
-        align-items: left;
-        text-align: left;
+        align-items: center;
+        text-align: center;
+        
+        
     }
 
     .timeline-date {
-        text-align: left;
+        text-align: center;
         padding-right: 0;
-        margin-bottom: 0.5rem;
+        margin-bottom: -10rem;
     }
 
     .timeline-content {
         border-left: none;
         border-top: 3px solid var(--accent);
         padding-left: 0;
-        padding-top: 1rem;
+        padding-top: 2rem;
     }
 
     .timeline-content::before {
@@ -216,23 +227,9 @@ p {
 }
 
 
-@media (max-width: 480px) {
-    .section-title {
-        font-size: 2rem;
-    }
 
-    .timeline {
-        padding: 1rem;
-    }
 
-    .timeline-date {
-        font-size: 1rem;
-    }
 
-    .timeline-content {
-        font-size: 0.9rem;
-    }
-}
 
 
 
@@ -251,7 +248,7 @@ p {
 
 /* Navigation Bar */
 .navbar {
-    background-color: var(--primary);
+    background-color: var(--accent);
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
@@ -313,7 +310,7 @@ p {
         position: absolute;  /* Position absolutely for mobile view */
         top: 60px;  /* Position just below the navbar */
         left: 0;
-        background-color: var(--primary);
+        background-color: var(--accent);
         width: 100%;
         padding: 1rem;
         border-top: 2px solid var(--accent);
@@ -356,9 +353,6 @@ p {
 
 
 
-
-
-
 /* About me HTML web Section Styling */
 .about-me {
     padding: 8rem 2rem;
@@ -375,4 +369,81 @@ p {
 
 .about-content p {
     margin-bottom: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Styling */
+
+
+/* Contact Footer */
+.contact-footer {
+    background-color: var(--Black);
+    color: var(--white);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-title {
+    font-family: 'Merriweather', serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.contact-item a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--accent);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--accent);
 }
