@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ali Negahdar | Theoretical Physics Graduate</title>
+    <meta name="description" content="Ali Negahdar - Theoretical Physics Graduate Portfolio">
+
+    <link rel="stylesheet" href="style.css">   
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@400;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+
+
+<body>
+    
+
+
+
+
+<!-- Navigation Menu -->
+<nav class="navbar">
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+
+    <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li> <!--Add links-->
+        <li><a href="#Cv" class="nav-link">Cv</a></li>
+    </ul>
+</nav>
+
+
+<!-- Mobile Handling Hambeurger -->
+<script>
+
+
+function toggleMenu() {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('open');  // Toggle the "open" class on the navbar
+}
+
+</script>
+
+
+
+
+
+<!-- Heading -->
+
+    <section class="Name">
+        <img src="ali-negahdar.jpg" alt="Ali Negahdar Pic" class="prof-img" >
+        <h1>Ali Negahdar</h1>
+        <p class="tagline">Theoretical Physics Graduate</p>
+    </section>
+
+
+
+
+
+  <!-- About Section Time line -->
+  <section class="about">
+    <h2 class="section-title">Academic Journey</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">2020 - 2024</div>
+            <div class="timeline-content">
+                <h3>Graduated with First-Class Honours from Newcastle University</h3>
+                <p>Specialized in quantum mechanical systems and applied mathematical modeling, with research recognized for methodological rigor.</p>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+
+<!--Time line animation popoout script-->>
+
+   <script>
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        timelineItems.forEach(item => observer.observe(item));
+    </script>
+
+
+<!--Java script for Menue bar-->>
+
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Select all navigation links
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Loop through each link and add an event listener
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                const target = link.getAttribute('href'); // Get the target URL (about.html, index.html, etc.)
+
+                // If it's an anchor link (like #about), handle smooth scroll
+                if (target.startsWith('#')) {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    const targetElement = document.querySelector(target);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                } else {
+                    // If it's a full page navigation, allow the normal behavior
+                    // No need for e.preventDefault() in this case, so it behaves as a normal page redirect
+                    window.location.href = target; // Navigate to the full page (about.html, index.html)
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+
+
+
+
+</html>
+
+

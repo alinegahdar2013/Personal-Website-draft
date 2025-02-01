@@ -1,0 +1,323 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;  /* This allows smooth scrolling when clicking internal links */
+  }
+
+
+/*colour coustom at root*/
+
+:root {
+    --blue-1: #153260;      
+    --white: #f6f9fc;     
+    --purple: #9f96e6;      
+    --primary: #2c3e50;      
+    --accent: #6c5ce7;       
+    --text: #2d3436;         
+    --background: #ffffff;   
+    --light-gray: #f8f9fa;
+    
+    
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--white);
+    color: var(--blue-1);
+    line-height: 1.60;
+}
+
+
+.Name {
+    min-height: 100vh;             
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(20deg, var(--white) 40%, #1a237e 100%);
+}
+
+
+
+.prof-img {
+    width: min(400px, 80%);
+    aspect-ratio: 1; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 4px solid var(--purple);
+    margin-bottom: 2rem;
+    box-shadow: 0 0 30px rgba(108, 92, 231, 0.3);
+}
+
+
+.prof-img {
+    animation: float 2.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion) {
+    .prof-img {
+        animation: none;
+    }
+}
+
+h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+
+
+.tagline {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.5rem;
+    opacity: 0.9;
+    max-width: 600px;
+    font-weight: 400;
+}
+
+
+
+#circular-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+
+
+/*Time line section*/
+
+.about {
+    padding: 8rem 2rem;
+    background: var(--light-gray);
+}
+
+.section-title {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    position: relative;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin: 1rem auto;
+}
+
+.timeline {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Fira Code', monospace; 
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s ease;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-date {
+    flex: 0 0 200px;
+    text-align: right;
+    padding-right: 2rem;
+    font-family: 'Merriweather', serif;
+    color: var(--accent);
+}
+
+.timeline-content {
+    font-family: 'Inter', sans-serif;
+    flex: 1;
+    border-left: 3px solid var(--accent);
+    padding-left: 2rem;
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+h2, h3 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+}
+/*Time line end/
+
+
+
+
+
+
+/*Navigation bar styling*/
+/* Navigation Bar */
+
+
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--primary);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;  /* Center the navbar horizontally */
+    align-items: center;  /* Center items vertically */
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;  /* Ensure the menu items are centered */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 1.5rem;  /* Add some space between links */
+    padding: 8px 16px;  /* Add padding for better clickability */
+    transition: color 0.3s ease, transform 0.2s ease;  /* Add smooth transitions for hover */
+    border-radius: 4px;  /* Rounded corners for links */
+}
+
+/* Active state for navigation links */
+.nav-link.active {
+    background-color: var(--accent);
+    color: var(--white);
+    transform: scale(1.1);  /* Slightly enlarge the active link */
+}
+
+/* Hover effect */
+.nav-link:hover {
+    color: var(--accent);
+    background-color: var(--white);
+    transform: scale(1.05);  /* Slightly enlarge on hover */
+}
+
+/* Focus effect for keyboard navigation */
+.nav-link:focus {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+
+/* Responsive Navbar for smaller screens */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;  /* Initially hide the menu on mobile */
+        flex-direction: column;  /* Stack links vertically */
+        position: absolute;  /* Position absolutely for mobile view */
+        top: 60px;  /* Position just below the navbar */
+        left: 0;
+        background-color: var(--primary);
+        width: 100%;
+        padding: 1rem;
+        border-top: 2px solid var(--accent);
+    }
+
+    .navbar.open .nav-links {
+        display: flex;  /* Show menu when navbar has "open" class */
+    }
+
+    .nav-link {
+        margin: 0.8rem 0;  /* Increase space between links on mobile */
+        font-size: 1.3rem;  /* Increase font size for better readability */
+    }
+
+    .hamburger {
+        display: block;  /* Show hamburger icon on mobile */
+        cursor: pointer;
+        font-size: 2rem;
+        color: var(--white);
+    }
+}
+
+/* Add mobile-friendly hamburger icon styling */
+.hamburger {
+    display: none;  /* Hide the hamburger by default */
+}
+
+/* Show hamburger icon only when the screen size is small */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+        font-size: 2rem;
+        color: var(--white);
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+
+
+/* About me HTML web Section Styling */
+.about-me {
+    padding: 8rem 2rem;
+    background: var(--light-gray);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.75;
+    color: var(--text);
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+}
